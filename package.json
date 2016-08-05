@@ -10,6 +10,9 @@
     "start:dev": "ts-node src/server/debug.ts",
     "start:dev:components": "start-storybook -p 9001"
   },
+  "engines": {
+    "node": "6.3.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
