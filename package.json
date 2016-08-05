@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "test:ci": "mocha --reporter mocha-junit-reporter",
+    "test:ci": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=$CIRCLE_TEST_REPORTS/junit/test-results.xml",
     "test:dev": "mocha --watch",
     "start": "rm -rf dist && ts-node start.ts",
     "start:dev": "ts-node start.debug.ts",
