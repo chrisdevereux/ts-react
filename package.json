@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "test:ci": "mocha --reporter mocha-junit-reporter",
     "test:dev": "mocha --watch",
     "start": "rm -rf dist && ts-node start.ts",
     "start:dev": "ts-node start.debug.ts",
@@ -41,6 +42,7 @@
     "isomorphic-fetch": "2.2.1",
     "lodash": "4.14.0",
     "mocha": "2.5.3",
+    "mocha-junit-reporter": "1.11.1",
     "node-sass": "3.8.0",
     "normalize.css": "4.2.0",
     "phantomcss": "1.1.3",
