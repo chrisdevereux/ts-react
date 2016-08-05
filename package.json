@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha",
     "test:dev": "mocha --watch",
-    "start": "rm -rf dist && ts-node src/server/prod.ts",
-    "start:dev": "ts-node src/server/debug.ts",
+    "start": "rm -rf dist && ts-node start.ts",
+    "start:dev": "ts-node start.debug.ts",
     "start:dev:components": "start-storybook -p 9001"
   },
   "engines": {
@@ -63,7 +63,11 @@
   },
   "devDependencies": {
     "@kadira/storybook": "1.41.0",
+    "@types/chai": "3.4.29",
+    "@types/mocha": "2.2.28",
+    "chai": "3.5.0",
     "json-env": "1.0.1",
+    "mocha": "2.5.3",
     "nodemon": "1.10.0",
     "sinon": "1.17.5",
     "webpack-dev-middleware": "1.6.1",

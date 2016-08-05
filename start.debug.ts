@@ -1,9 +1,9 @@
-require('json-env')('config/dev.private.json')
+require('json-env')('./config/dev.private.json')
 
-import main from './main'
+import main from './src/server/main'
 import * as webpack from 'webpack'
 
-const compiler = webpack(require('../../config/webpack.dev.js'))
+const compiler = webpack(require('./config/webpack.dev.js'))
 const hot = require('webpack-hot-middleware')
 const devserver = require('webpack-dev-middleware')
 
