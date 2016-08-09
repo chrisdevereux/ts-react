@@ -4,3 +4,4 @@
 .ui-test-results
 dist
 node_modules
+user-flows/visuals

@@ -22,3 +22,7 @@ deployment:
     branch: master
     heroku:
       appname: ts-react-staging
+
+general:
+  artifacts:
+    "user-flows/visuals"
