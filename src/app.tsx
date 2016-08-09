@@ -5,7 +5,7 @@ import { update } from './models'
 const app = new App(update)
 export default app
 
-app.get('/:resort/weather', (req) => ({
+app.get('/:resort', (req) => ({
   title: `Holiday Weather | ${req.get('resort')}`,
   content: <div>Hello, World!</div>
 }))

@@ -1,5 +1,6 @@
 *.log
 .DS_Store
 .vscode
+.ui-test-results
 dist
 node_modules

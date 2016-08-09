@@ -7,6 +7,7 @@
     "test": "mocha",
     "test:ci": "mocha --reporter mocha-junit-reporter",
     "test:dev": "mocha --watch",
+    "ui-test": "ts-node user-flows/init",
     "start": "rm -rf dist && ts-node src/server",
     "start:dev": "ts-node src/server",
     "start:dev:components": "start-storybook -p 9001"
@@ -38,6 +39,7 @@
     "chai": "3.5.0",
     "classnames": "2.2.5",
     "css-loader": "0.23.1",
+    "es6-promise": "3.2.1",
     "express": "4.14.0",
     "file-loader": "0.9.0",
     "helmet": "2.1.2",

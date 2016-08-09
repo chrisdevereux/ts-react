@@ -55,6 +55,7 @@ module.exports = function(config) {
     },
     postcss: () => [flexbugs, autoprefixer({ browsers })],
     entry: [
+      'es6-promise',
       path.resolve(__dirname, '../src/client.tsx'),
       ...(
         development ? [

@@ -8,8 +8,19 @@ test:
         environment:
           MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
 
+    - "npm run ui-test":
+        environment:
+          UI_TEST_ENV: CI
+
 deployment:
   staging:
     branch: master
     heroku:
       appname: ts-react-staging
+
+  snapshots:
+    branch: master
+    commands:
+      - git add user-flows/visuals
+      - git commit -m "[CI] Update UI snapshots"
+      - git push origin master
