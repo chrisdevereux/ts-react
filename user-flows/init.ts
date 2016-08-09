@@ -43,6 +43,8 @@ server.listen(process.env.PORT, () => {
       if (status === 0) {
         const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' })
         if (branch === 'master') {
+          console.log('Updating master branch with lastest UI test snapshots')
+
           execSync('git add user-flows/visuals')
           execSync('git commit -m "[CI] Updating UI test snapshots with latest"')
           execSync('git push origin master')

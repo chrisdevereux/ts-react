@@ -11,6 +11,7 @@ test:
     - "npm run ui-test":
         environment:
           UI_TEST_ENV: CI
+          NODE_ENV: production
 
 deployment:
   staging:
