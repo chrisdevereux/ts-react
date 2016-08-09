@@ -1,5 +1,6 @@
 import * as express from 'express'
 import { assign } from 'lodash'
+import { execSync } from 'child_process'
 
 import app from '../src/app'
 import renderMiddleware from '../src/router/server'
@@ -39,6 +40,15 @@ server.listen(process.env.PORT, () => {
   const flow = require('phantomflow').init(assign({ createReport: true }, flowOpts))
   flow.run((status: number) => {
     if (process.env.UI_TEST_ENV === 'CI') {
+      if (status === 0) {
+        const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' })
+        if (branch === 'master') {
+          execSync('git add user-flows/visuals')
+          execSync('git commit -m "[CI] Updating UI test snapshots with latest"')
+          execSync('git push origin master')
+        }
+      }
+
       process.exit(status)
 
     } else {

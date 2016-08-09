@@ -12,9 +12,6 @@ test:
         environment:
           UI_TEST_ENV: CI
 
-  post:
-    - sh user-flows/commit.sh
-
 deployment:
   staging:
     branch: master
