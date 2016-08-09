@@ -1,6 +1,5 @@
 import * as express from 'express'
 import { assign } from 'lodash'
-import { execSync } from 'child_process'
 
 import app from '../src/app'
 import renderMiddleware from '../src/router/server'
