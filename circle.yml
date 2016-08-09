@@ -12,14 +12,11 @@ test:
         environment:
           UI_TEST_ENV: CI
 
+  post:
+    - sh user-flows/commit.sh
+
 deployment:
   staging:
     branch: master
-
     heroku:
       appname: ts-react-staging
-
-    commands:
-      - git add user-flows/visuals
-      - git commit -m "[CI] Update UI snapshots"
-      - git push origin master
