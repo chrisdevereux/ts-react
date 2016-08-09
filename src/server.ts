@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   // Dev-only middleware
 
   const webpack = require('webpack')
-  const compiler = webpack(require('../config/webpack.dev.js'))
+  const compiler = webpack(require('../config/webpack.config.js'))
   const hot = require('webpack-hot-middleware')
   const devserver = require('webpack-dev-middleware')
 

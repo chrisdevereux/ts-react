@@ -14,7 +14,7 @@ process.env.PORT = process.env.PORT || 8000
 
 // Page server
 const webpack = require('webpack')
-const compiler = webpack(require('../config/webpack.dev.js'))
+const compiler = webpack(require('../config/webpack.config.js'))
 const devserver = require('webpack-dev-middleware')
 
 server.use(devserver(compiler, {
