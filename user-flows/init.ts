@@ -42,6 +42,7 @@ server.listen(process.env.PORT, () => {
     if (process.env.UI_TEST_ENV === 'CI') {
       if (status === 0) {
         const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' })
+        console.log('current branch: ', branch)
         if (branch === 'master') {
           console.log('Updating master branch with lastest UI test snapshots')
 
