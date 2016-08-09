@@ -22,12 +22,15 @@ module.exports = function(config) {
       path: path.resolve(__dirname, '../dist'),
       publicPath: config['PUBLIC_PATH'] || '/',
     },
+    resolve: {
+      extensions: ['', '.tsx', '.ts', '.webpack.js', '.web.js', '.js']
+    },
     module: {
       loaders: [
         {
           test: /\.tsx?$/,
           loaders: ['ts-loader'],
-          exclude: [/node_modules/, /web_modules/],
+          exclude: [/node_modules/]
         },
         {
           test: /\.scss$/,
@@ -43,9 +46,16 @@ module.exports = function(config) {
         },
       ],
     },
+    ts: {
+      transpileOnly: true,
+      compilerOptions: {
+        isolatedModules: true,
+        noEmitOnError: false
+      }
+    },
     postcss: () => [flexbugs, autoprefixer({ browsers })],
     entry: [
-      path.resolve(__dirname, '../src/client/main.tsx'),
+      path.resolve(__dirname, '../src/client.tsx'),
       ...(
         development ? [
           'webpack-hot-middleware/client?reload=true',
