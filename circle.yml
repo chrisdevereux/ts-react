@@ -25,4 +25,4 @@ deployment:
 
 general:
   artifacts:
-    "user-flows/visuals"
+    - "user-flows/visuals"
