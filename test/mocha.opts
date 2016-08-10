@@ -1,4 +1,5 @@
 --compilers ts:ts-node/register
 --compilers tsx:ts-node/register
+-r isomorphic-fetch
 src/*/**/*.tsx
 src/*/**/*.ts
